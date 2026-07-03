@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type ="text" id="display" name="display" >
+                </div>
+                <button type="button" id="themeBtn" onclick="toggleTheme()">🌙 Dark Mode </button>
+                <div class="row1">
+            
+                    <input type="button" value="(" onclick="display.value += '('" class="operator">
+                    <input type="button" value=")" onclick="display.value += ')'" class="operator">
+                    <input type="button" value="e"  onclick="eValue()">
+                    <input type="button" value="π" onclick="pi()">
+                    <input type="button" value="xʸ" onclick="power()">
+                    <input type="button" value="MC" onclick="memoryClear()">
+                    <input type="button" value="MR" onclick="memoryRecall()">
+                    <input type="button" value="M+" onclick="memoryAdd()">
+                    <input type="button" value="M-" onclick="memorySubtract()">
+                </div>
+
+                
+                <div class="row1">
+                    <input type ="button" value="AC" onclick="display.value = '' " class="operator">
+                    <input type ="button" value="1/x" onclick="display.value = 1/display.value" >
+                    <input type ="button" value="x^3" onclick="display.value = Math.pow(display.value, 3)" >
+                    <input type ="button" value="x^2" onclick="display.value = Math.pow(display.value, 2)" >    
+                    <input type="button" value="%" onclick="percentage()">    
+                    <input type="button" value="x!" onclick="factorial()">    
+                    <input type="button" value="∛" onclick="cubeRoot()">
+                    <input type ="button" value="√" onclick="display.value = Math.sqrt(display.value)">
+                    <input type="button" value="CE" onclick="clearEntry()">
+                </div>
+
+
+                <div class="row1">
+                    <input type ="button" value="÷" onclick="display.value += '/'" class="operator">
+                    <input type ="button" value="7" onclick="display.value += '7'" >
+                    <input type ="button" value="8" onclick="display.value += '8'" >
+                    <input type ="button" value="9" onclick="display.value += '9'" >
+                    <input type="button" value="sin" onclick="sinFunction()"> 
+                    <input type="button" value="cos" onclick="cosFunction()"> 
+                    <input type="button" value="tan" onclick="tanFunction()">
+                    <input type ="button" value="log" onclick="display.value = Math.log10(display.value)">
+                    <input type ="button" value="ln" onclick="display.value = Math.log(display.value)">   
+                </div>
+
+                <div class="row1">
+                    <input type="button" value="*" onclick="display.value += '*'" class="operator">
+                    <input type ="button" value="4" onclick="display.value += '4'" class="number">
+                    <input type ="button" value="5" onclick="display.value += '5'" class="number">
+                    <input type ="button" value="6" onclick="display.value += '6'" class="number">                    
+                </div>
+
+                <div class="row1">
+                    <input type ="button" value="_" onclick="display.value += '_ '" class="operator">
+                     <input type ="button" value="1" onclick="display.value += '1'" class="number">
+                    <input type ="button" value="2" onclick="display.value += '2'" class="number">
+                    <input type ="button" value="3" onclick="display.value += '3'" class="number">                    
+                </div>
+
+
+                   <div class="row1"> 
+                    <input type ="button" value="DE" onclick="display.value = display.value.toString().slice(0, -1)" class="operator"> 
+                     <input type ="button" value="0" onclick="display.value += '0'"> 
+                     <input type ="button" value="00" onclick="display.value += '00'">
+                     <input type ="button" value="." onclick="display.value += '.'">
+                    <input type ="button" value="+" onclick="display.value += '+ '" class="operator">
+                    <input type ="button" value="-" onclick="display.value += '-'" class="operator">
+                     <!-- <input type ="button" value="=" onclick="display.value = eval(display.value)" class="equal " >  -->
+                     <input type="button" value="=" onclick="calculate()" class="equal"> 
+                </div> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>
