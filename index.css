@@ -6,6 +6,7 @@
 
 .container {
     min-height: 100vh;
+    min-height: 100dvh;
     width: 100%;
     background: #503859;
     display: flex;
@@ -142,8 +143,9 @@ body.dark #themeBtn {
 @media (max-width: 768px) {
     .container {
         padding: 8px;
-        align-items: flex-start;
-        padding-top: 12px;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
     }
 
     .calculator {

@@ -45,7 +45,7 @@
 
 
                 <div class="row1">
-                    <input type ="button" value="÷" onclick="display.value += '/'" class="operator">
+                    <input type ="button" value="÷" onclick="appendOperator('/')" class="operator">
                     <input type ="button" value="7" onclick="display.value += '7'" >
                     <input type ="button" value="8" onclick="display.value += '8'" >
                     <input type ="button" value="9" onclick="display.value += '9'" >
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="row1">
-                    <input type="button" value="*" onclick="display.value += '*'" class="operator">
+                    <input type="button" value="*" onclick="appendOperator('*')" class="operator">
                     <input type ="button" value="4" onclick="display.value += '4'" class="number">
                     <input type ="button" value="5" onclick="display.value += '5'" class="number">
                     <input type ="button" value="6" onclick="display.value += '6'" class="number">                    
@@ -76,8 +76,8 @@
                      <input type ="button" value="0" onclick="display.value += '0'"> 
                      <input type ="button" value="00" onclick="display.value += '00'">
                      <input type ="button" value="." onclick="display.value += '.'">
-                    <input type ="button" value="+" onclick="display.value += '+ '" class="operator">
-                    <input type ="button" value="-" onclick="display.value += '-'" class="operator">
+                    <input type ="button" value="+" onclick="appendOperator('+')" class="operator">
+                    <input type ="button" value="-" onclick="appendOperator('-')" class="operator">
                      <!-- <input type ="button" value="=" onclick="display.value = eval(display.value)" class="equal " >  -->
                      <input type="button" value="=" onclick="calculate()" class="equal"> 
                 </div> 

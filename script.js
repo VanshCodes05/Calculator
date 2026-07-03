@@ -2,12 +2,25 @@
 let display = document.getElementById("display");
 let memory = 0;
 
+function appendOperator(op) {
+    display.value = display.value.trimEnd();
+    if (display.value !== "") {
+        display.value += " " + op + " ";
+    } else {
+        display.value = op + " ";
+    }
+}
+
+function getCleanExpression() {
+    return display.value.replace(/\s/g, "");
+}
+
 //PI
 function pi() {
     if (display.value === "") {
         display.value = Math.PI;
     } else {
-        display.value += "*" + Math.PI;
+        display.value = display.value.trimEnd() + " * " + Math.PI;
     }
 }
 
@@ -16,7 +29,7 @@ function eValue() {
     if (display.value === "") {
         display.value = Math.E;
     } else {
-        display.value += "*" + Math.E;
+        display.value = display.value.trimEnd() + " * " + Math.E;
     }
 }
  
@@ -27,7 +40,7 @@ function power() {
 
 //%
 function percentage() {
-    let exp = display.value.trim();
+    let exp = getCleanExpression();
 
     let operators = ["+", "-", "*", "/"];
 
@@ -66,7 +79,7 @@ function factorial() {
 }
 function calculate() {
     try {
-        let exp = display.value;
+        let exp = getCleanExpression();
 
         // Replace factorials
         exp = exp.replace(/(\d+)!/g, function(match, num) {
@@ -96,7 +109,7 @@ function cubeRoot() {
     }
 }function calculate() {
     try {
-        let exp = display.value;
+        let exp = getCleanExpression();
 
         // Factorial
         exp = exp.replace(/(\d+)!/g, function(match, num) {
@@ -128,8 +141,7 @@ function cubeRoot() {
 function clearEntry() {
     let exp = display.value;
 
-    // Remove the last entered number
-    exp = exp.replace(/\d*\.?\d+$/, "");
+    exp = exp.replace(/\s*\d*\.?\d+\s*$/, "");
 
     display.value = exp;
 }
@@ -153,7 +165,7 @@ function tanFunction() {
 }
 function calculate() {
     try {
-        let exp = display.value;
+        let exp = getCleanExpression();
 
         // Factorial
         exp = exp.replace(/(\d+)!/g, function(match, num) {
@@ -208,7 +220,7 @@ function calculate() {
 
 function memoryAdd() {
     try {
-        memory += Number(eval(display.value));
+        memory += Number(eval(getCleanExpression()));
     } catch {
         alert("Invalid expression");
     }
@@ -216,7 +228,7 @@ function memoryAdd() {
 
 function memorySubtract() {
     try {
-        memory -= Number(eval(display.value));
+        memory -= Number(eval(getCleanExpression()));
     } catch {
         alert("Invalid expression");
     }
